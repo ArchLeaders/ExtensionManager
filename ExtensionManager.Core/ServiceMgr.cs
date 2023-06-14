@@ -10,7 +10,18 @@ public class ServiceMgr : IServiceMgr
 
     public void RequestService(IFileHandle handle)
     {
-        throw new NotImplementedException();
+        foreach (var service in _dataServices) {
+            if (service.IsValid(handle)) {
+                handle = service.Process(handle);
+                break;
+            }
+        }
+
+        foreach (var service in _formatServices) {
+            if (service.IsValid(handle)) {
+                service.Read(handle);
+            }
+        }
     }
 
     public void Register(IDataService dataProcessor)
