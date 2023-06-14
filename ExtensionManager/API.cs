@@ -14,6 +14,6 @@ public class API
     public static void Process(string param)
     {
         Console.WriteLine($"API processing '{param}' | (Top Level)");
-        API.ServiceMgr.RequestService(new FileHandle(param, Array.Empty<byte>()));
+        ServiceMgr.RequestService(new FileHandle(param, Array.Empty<byte>()));
     }
 }
