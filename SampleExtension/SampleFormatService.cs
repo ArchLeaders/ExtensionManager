@@ -9,7 +9,7 @@ internal class SampleFormatService : IFormatService
 
     public bool IsValid(IFileHandle handle)
     {
-        throw new NotImplementedException();
+        return handle.Path.EndsWith(".extension") == true;
     }
 
     public void Read(IFileHandle handle)
