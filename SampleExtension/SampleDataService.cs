@@ -12,7 +12,7 @@ internal class SampleDataService : IDataService
 
     public IFileHandle Process(IFileHandle handle)
     {
-        handle.Path = handle.Path[..^2];
+        handle.Path = handle.Path[..^3];
         return handle;
     }
 
